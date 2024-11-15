@@ -11,9 +11,9 @@ function total() {
 	for record in "${records[@]}"
 		do
 		#reading from array
-		IFS=',' read -r username date time games_played user_wins greg_wins <<< "$record"
+		IFS=',' read -r username date time game_played user_wins greg_wins <<< "$record"
 		#counting the records
-		((total_games += games_played))
+		((total_games += game_played))
 		((total_user_wins += user_wins))
 		((total_greg_wins += greg_wins))
 		done

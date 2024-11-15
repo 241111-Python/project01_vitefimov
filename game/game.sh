@@ -5,14 +5,14 @@ function rundom_search() {
     echo $(((RANDOM % range) + 1))
 }
 
-function comp_guess_check() {
-    local num=$1
-    if [ "$num" -eq "$number" ]; then
-        echo "Computer WINS!!!!!!"
-        return 0
-    fi
-    return 1
-}
+# function comp_guess_check() {
+#     local num=$1
+#     if [ "$num" -eq "$number" ]; then
+#         echo "Computer WINS!!!!!!"
+#         return 0
+#     fi
+#     return 1
+# }
 
 function greg_guess() {
     if [ "$difficulty" -eq 1 ]; then
@@ -26,7 +26,6 @@ function greg_guess() {
     fi
 }
 
-#Program is start here.
 
 echo "Hi, my name is Greg, do you wanna play with me? 1(YES), 2(NO)"
 read answer
@@ -52,12 +51,12 @@ read difficulty
 
 date=$(date +"%Y-%m-%d")
 time=$(date +"%H:%M:%S")
-games_played=0
+game_played=0
 attempts=0
 user_wins=0
 greg_wins=0
 
-((games_played++))
+((game_played++))
 
 echo "$username vs Greg"
 
@@ -124,7 +123,7 @@ fi
 
 
 #Sending the data to logs file
-echo "Username: $username, Date: $date, Time: $time Games played: $games_played, User wins: $user_wins, Greg wins: $greg_wins, User attempts: $user_attempts, Gregs attempts: $greg_attempts"  >> "$logs"
+echo "Username: $username, Date: $date, Time: $time Games played: $game_played, User wins: $user_wins, Greg wins: $greg_wins, User attempts: $user_attempts, Gregs attempts: $greg_attempts"  >> "$logs"
 
 #logic for continue playing
 while true; do 
@@ -143,7 +142,7 @@ fi
 game
 
 # #Sending the data to logs file
-echo "Username: $username, Date: $date, Time: $time Games played: $games_played, User wins: $user_wins, Greg wins: $greg_wins, User attempts: $user_attempts, Gregs attempts: $greg_attempts" >> "$logs"
+echo "Username: $username, Date: $date, Time: $time Games played: $game_played, User wins: $user_wins, Greg wins: $greg_wins, User attempts: $user_attempts, Gregs attempts: $greg_attempts" >> "$logs"
 
 done
 
