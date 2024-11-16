@@ -16,6 +16,7 @@ Greg has three levels of difficulty:
  - Low: Greg uses random search.
  - Medium: Greg uses linear search.
  - Hard: Greg uses binary search.
+
 All necessary files in the repo, logs, and statistics files will be generated automatically.
 If you want to run the analyzer file in crontab, follow these instructions:
 
